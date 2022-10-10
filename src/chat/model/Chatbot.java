@@ -13,7 +13,7 @@ public Chatbot(String chatbotName)
 }
 
 public String processText(String input) {
-	String output = input;
+	String output = reversePronounDirection(input);
 	
 	return output;
 }
@@ -43,8 +43,7 @@ private boolean isValidHTMLChecker(String text)
  }
  private String reversePronounDirection(String source)
  {
-	 String response = "";
-	 
+	 String response = source.replace("I", "You ");
 	 return response;
  }
 }
