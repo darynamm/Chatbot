@@ -1,6 +1,7 @@
 package control.controller;
 
 import chat.model.Chatbot;
+
 import java.util.Scanner;
 public class Controller
 {
@@ -14,6 +15,14 @@ public class Controller
 	}
 	public void start()
 	{
+		int a = 3;
+		int b = 4;
+		int c = 5;
+		
+		boolean p = b < a;
+		boolean q = c <b;
+		System.out.println(!((a>c) && b > c));
+		
 		System.out.println("Let's talk to the chatbot");
 		String text = keyboardInput.nextLine();
 		
@@ -26,6 +35,7 @@ public class Controller
 		}
 		keyboardInput.close();
 	}
+	
 	private String interactWithChatbot(String userText)
 	{
 		String response = "";
