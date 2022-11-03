@@ -7,6 +7,8 @@ public class Chatbot
 	private String chatbotName;
 	private String userName;
 	
+	private String [] chatTopics;
+	
 	private ArrayList<String> riddleList; 
 	private ArrayList<String> answerList; 
 private ArrayList<String> jokeList;
@@ -17,8 +19,22 @@ private ArrayList<String> jokeList;
 		riddleList = new ArrayList<String>();
 		answerList = new ArrayList<String>();	
 		jokeList = new ArrayList<String>();
-		
+		loadTopic();
 
+	}
+	
+	private void loadTopic()
+	{
+		String topicOne = "do you like spicy food?? i do!";
+		String topicTwo = "i love snickers, whats your favorite candy bar??";
+		String topicThree = "do you like kitties or puppies better?";
+		String topicFour = "have you seen finding dory?? ";
+		String topicFive = "im watching pretty little liars right now, what are you watching?";
+		String topicSix = "what is your favorite book? one of mine is the good girls guide to murder!";
+		String topicSeven = "what is your favorite holiday";
+		String topicEight = "how much college credit does this class grant again???";
+		String topicNine = "i want to go to the u, where do you want to go??";
+		String topicTen = "do you like the boba at kung fu tea? ";
 	}
 
 	public String processText(String input)
@@ -187,8 +203,8 @@ private String groanJoke(String text)
 
 				if (closeTagStartIndex > openTagEndIndex && closeTagEndIndex > closeTagStartIndex)
 				{
-					String closingKeyword = phrase.substring(closeTagStartIndex + 2, closeTagEndIndex);
-					int closetagStart = phrase.indexOf("<" + closingKeyword + ">");
+					String closingKeyword = phrase.substring(closeTagStartIndex + 2,openTagEndIndex);
+					int closetagStart = phrase.indexOf("<" + closingKeyword + ">", openTagEndIndex);
 					int spaceIndex = keyword.indexOf(" ");
 					if (spaceIndex != -1)
 					{
