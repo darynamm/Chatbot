@@ -39,7 +39,49 @@ private ArrayList<String> jokeList;
 
 	public String processText(String input)
 	{
-		String output = reversePronounDirection(input);
+		String output = "";
+		
+		int randomMethod = (int) (Math.random() * 6);
+		if (randomMethod == 0)
+		{
+			output = reversePronounDirection(input);
+		}
+		else if (randomMethod == 1)
+		{
+			if (spookyChecker(input))
+			{
+				output += "\n" + spookyResponse() + "\n";
+			}
+			else 
+			{
+				output += "\n" + "That isnt very spooky";
+			}
+		}
+		else if (randomMethod == 2)
+		{
+			if (isValidHTMLChecker(input))
+			{
+				output += "\n" + isValidHTMLResponse() + "\n";
+			}
+			else 
+			{
+				output += "\n" + "No HTML here :(" + "\n";
+			}
+		}
+		else if (randomMethod == 3)
+		{
+			output = riddleList[]
+		}
+		else if(randomMethod == 4)
+		{
+			//joke list or other
+		}
+		else
+		{
+			//joke list or oher
+		}
+		int randomTopic = (int) (Math.random() * chatTopics.length);
+		output += "\n" + chatTopics[randomTopic];
 
 		return output;
 	}
@@ -115,6 +157,7 @@ private String groanJoke(String text)
 		return "";
 	}
 
+
 	private String spookyResponse()
 	{
 		String response = "i am spooked!";
@@ -143,6 +186,18 @@ private String groanJoke(String text)
 		else
 		{
 			return response5;
+		}
+	}
+	
+	private void workWithIntArray(int [] numbers)
+	{
+		int favoriteNumber = 13;
+		numbers [0] = favoriteNumber;
+		numbers [numbers.length - 1] = favoriteNumber;
+		
+		for (int index = 0; index < numbers.length; index ++)
+		{
+			System.out.println("Index" + index + ": contains: " + numbers[index]);
 		}
 	}
 
