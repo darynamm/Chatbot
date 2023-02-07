@@ -70,7 +70,7 @@ private ArrayList<String> jokeList;
 		}
 		else if (randomMethod == 3)
 		{
-			output = riddleList[]
+			output = answerRiddle[]
 		}
 		else if(randomMethod == 4)
 		{
