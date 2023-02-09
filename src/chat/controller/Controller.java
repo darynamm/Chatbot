@@ -4,7 +4,7 @@ import chat.model.Chatbot;
 import chat.view.Popup;
 
 import java.util.Scanner;
-public class Controller
+public class Controller 
 {
 	private Chatbot chatbot;
 	private Popup view;
