@@ -23,6 +23,7 @@ public class ChatFrame extends JFrame
 		this.setContentPane(panel);;
 		this.setSize(1024,768);
 		this.setTitle("Chatbot 2023");
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(true);
 		this.setVisible(true);
 	}
