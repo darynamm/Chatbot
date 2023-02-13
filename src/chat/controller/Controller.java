@@ -35,14 +35,17 @@ String text = view.askQuestion("Lets talk to the chatbot!");
 		}
 		
 	}
-	public String interactWithChatbot(String interactString, int interactInt)
-	{
-		return interactString;
-	}
+
 	private String interactWithChatbotOG(String userText)
 	{
 		String response = "";
 		response = chatbot.processText(userText);
+		return response;
+	}
+	
+	public String interactWithChatbot(String text, int index)
+	{
+		String response = "";
 		return response;
 	}
 }
