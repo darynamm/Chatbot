@@ -12,6 +12,8 @@ public class Chatbot
 	private ArrayList<String> riddleList; 
 	private ArrayList<String> answerList; 
 private ArrayList<String> jokeList;
+private ArrayList<String> chatTopic;
+private ArrayList<String> randomTopic;
 	public Chatbot(String chatbotName)
 	{
 		this.chatbotName = chatbotName;
@@ -19,6 +21,8 @@ private ArrayList<String> jokeList;
 		riddleList = new ArrayList<String>();
 		answerList = new ArrayList<String>();	
 		jokeList = new ArrayList<String>();
+		chatTopic = new ArrayList<String>();
+		randomTopic = new ArrayList<String>();
 		loadTopic();
 
 	}

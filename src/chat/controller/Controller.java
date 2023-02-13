@@ -27,7 +27,7 @@ String text = view.askQuestion("Lets talk to the chatbot!");
 		
 		while (!text.equalsIgnoreCase("shutdown "))
 		{
-			String chatbotResponse = interactWithChatbot(text);
+			String chatbotResponse = interactWithChatbotOG(text);
 		//	System.out.println("Chatbot says: ");
 		//	view.displayMessage("Chatbot says:" + chatbotResponse);
 			//system.out.println(chatbotRespons);
@@ -35,8 +35,11 @@ String text = view.askQuestion("Lets talk to the chatbot!");
 		}
 		
 	}
-	
-	private String interactWithChatbot(String userText)
+	public String interactWithChatbot(String interactString, int interactInt)
+	{
+		return interactString;
+	}
+	private String interactWithChatbotOG(String userText)
 	{
 		String response = "";
 		response = chatbot.processText(userText);

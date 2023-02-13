@@ -44,6 +44,8 @@ public class ChatPanel extends JPanel
 		super();
 		this.app = app;
 		
+		this.layout = new SpringLayout();
+		
 		this.reversePronounButton = new JButton("Reverses Pronouns!");
 		this.htmlButton = new JButton("HTML checker!");
 		this.holidayButton = new JButton("Holidayy seasonn");
