@@ -92,7 +92,7 @@ public class ChatPanel extends JPanel
 		chatButtonsPanel.add(groanButton);
 		chatButtonsPanel.add(processTextButton);
 
-		chatButtonsPanel.add(chatButton);
+		
 		
 		saveLoadPanel.add(saveButton);
 		saveLoadPanel.add(loadButton);
@@ -120,7 +120,7 @@ public class ChatPanel extends JPanel
 		layout.putConstraint(SpringLayout.SOUTH, chatPane, -200, SpringLayout.SOUTH, this);
 		
 		layout.putConstraint(SpringLayout.WEST, menuPanel, 0, SpringLayout.WEST, chatPane);
-		layout.putConstraint(SpringLayout.EAST, menuPanel, 0, SpringLayout.WEST, chatPane);
+		layout.putConstraint(SpringLayout.EAST, menuPanel, 0, SpringLayout.EAST, chatPane);
 		layout.putConstraint(SpringLayout.NORTH, menuPanel, 25, SpringLayout.SOUTH, chatPane);
 		layout.putConstraint(SpringLayout.SOUTH, menuPanel, -25, SpringLayout.SOUTH, this);
 		
