@@ -16,10 +16,15 @@ public class Controller
 	{
 	this.chatbot = new Chatbot("Super smart chatbot tbh");
 	
-		this.view = new Popup();
 		this.window = new ChatFrame(this);
+		this.view = new Popup(window);
 	}
+	
 	public void start()
+	{
+		
+	}
+	private void oldStart()
 	{
 String text = view.askQuestion("Lets talk to the chatbot!");
 //		System.out.println("Let's talk to the chatbot");
@@ -27,7 +32,7 @@ String text = view.askQuestion("Lets talk to the chatbot!");
 		
 		while (!text.equalsIgnoreCase("shutdown "))
 		{
-			String chatbotResponse = interactWithChatbotOG(text);
+			String chatbotResponse = interactWithChatbot(text);
 		//	System.out.println("Chatbot says: ");
 		//	view.displayMessage("Chatbot says:" + chatbotResponse);
 			//system.out.println(chatbotRespons);
@@ -36,7 +41,7 @@ String text = view.askQuestion("Lets talk to the chatbot!");
 		
 	}
 
-	private String interactWithChatbotOG(String userText)
+	private String interactWithChatbot(String userText)
 	{
 		String response = "";
 		response = chatbot.processText(userText);
