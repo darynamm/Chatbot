@@ -6,27 +6,28 @@ public class Chatbot
 {
 	private String chatbotName;
 	private String userName;
-	
-	private String [] chatTopics;
-	
-	private ArrayList<String> riddleList; 
-	private ArrayList<String> answerList; 
-private ArrayList<String> jokeList;
-private ArrayList<String> chatTopic;
-private ArrayList<String> randomTopic;
+
+	private String[] chatTopics;
+
+	private ArrayList<String> riddleList;
+	private ArrayList<String> answerList;
+	private ArrayList<String> jokeList;
+	private ArrayList<String> chatTopic;
+	private ArrayList<String> randomTopic;
+
 	public Chatbot(String chatbotName)
 	{
 		this.chatbotName = chatbotName;
 		this.userName = "";
 		riddleList = new ArrayList<String>();
-		answerList = new ArrayList<String>();	
+		answerList = new ArrayList<String>();
 		jokeList = new ArrayList<String>();
 		chatTopic = new ArrayList<String>();
 		randomTopic = new ArrayList<String>();
 		loadTopic();
 
 	}
-	
+
 	private void loadTopic()
 	{
 		String topicOne = "do you like spicy food?? i do!";
@@ -41,48 +42,51 @@ private ArrayList<String> randomTopic;
 		String topicTen = "do you like the boba at kung fu tea? ";
 	}
 
-	public String processText(String input)
+	public String processText(String input, int choice)
 	{
 		String output = "";
-		
-		int randomMethod = (int) (Math.random() * 6);
-		if (randomMethod == 0)
+
+		// int randomMethod = (int) (Math.random() * 6);
+choice = 2;
+choice = 5;
+choice = 8;
+		if (choice == 0)
 		{
 			output = reversePronounDirection(input);
 		}
-		else if (randomMethod == 1)
+		else if (choice == 1)
 		{
 			if (spookyChecker(input))
 			{
 				output += "\n" + spookyResponse() + "\n";
 			}
-			else 
+			else
 			{
 				output += "\n" + "That isnt very spooky";
 			}
 		}
-		else if (randomMethod == 2)
+		else if (choice == 2)
 		{
 			if (isValidHTMLChecker(input))
 			{
 				output += "\n" + isValidHTMLResponse() + "\n";
 			}
-			else 
+			else
 			{
 				output += "\n" + "No HTML here :(" + "\n";
 			}
 		}
-		else if (randomMethod == 3)
+		else if (choice == 3)
 		{
 			output = answerRiddle(input);
 		}
-		else if(randomMethod == 4)
+		else if (choice == 4)
 		{
-			//joke list or other
+			// joke list or other
 		}
 		else
 		{
-			//joke list or oher
+			// joke list or oher
 		}
 		int randomTopic = (int) (Math.random() * chatTopics.length);
 		output += "\n" + chatTopics[randomTopic];
@@ -119,24 +123,26 @@ private ArrayList<String> randomTopic;
 
 		return isSpooky;
 	}
-private String groanJoke(String text)
-{
-	jokeList.add("I came to the hospital because I accidentally swallowed invisible ink. I'm still waiting to be seen.");
-	jokeList.add("What is the difference between a cat and a comma? A cat has claws at the end of his paws, whereas a comma is a pause at the end of a clause.");
-	jokeList.add("Doctor: Your body has run out of magnesium. Me: 0mg.");
-	jokeList.add("I don't like the way my kids are always quick to blame other people. They get that from their mum.");
-	jokeList.add("What's the best thing about Switzerland? I'm not sure, but the flag is a big plus.");
-	jokeList.add("Did you hear about the restaurant on the moon? Great food, no atmosphere");
-	jokeList.add("I was wondering why this frisbee kept looking bigger and bigger. Then it hit me.");
-	jokeList.add("Within minutes the detectives knew what the murder weapon was. It was a brief case.");
-	jokeList.add("This ham sandwich walks into a bar and orders a drink. The bartender says, “Sorry, we don’t serve food here.”");
-	jokeList.add("Did you know the first French fries weren’t really cooked in France? They were cooked in Grease! (Greece)");
-	
-	return "";
-}
+
+	private String groanJoke(String text)
+	{
+		jokeList.add("I came to the hospital because I accidentally swallowed invisible ink. I'm still waiting to be seen.");
+		jokeList.add("What is the difference between a cat and a comma? A cat has claws at the end of his paws, whereas a comma is a pause at the end of a clause.");
+		jokeList.add("Doctor: Your body has run out of magnesium. Me: 0mg.");
+		jokeList.add("I don't like the way my kids are always quick to blame other people. They get that from their mum.");
+		jokeList.add("What's the best thing about Switzerland? I'm not sure, but the flag is a big plus.");
+		jokeList.add("Did you hear about the restaurant on the moon? Great food, no atmosphere");
+		jokeList.add("I was wondering why this frisbee kept looking bigger and bigger. Then it hit me.");
+		jokeList.add("Within minutes the detectives knew what the murder weapon was. It was a brief case.");
+		jokeList.add("This ham sandwich walks into a bar and orders a drink. The bartender says, “Sorry, we don’t serve food here.”");
+		jokeList.add("Did you know the first French fries weren’t really cooked in France? They were cooked in Grease! (Greece)");
+
+		return "";
+	}
+
 	private String answerRiddle(String text)
 	{
-		
+
 		riddleList.add("How do you spell COW in thirteen letters?");
 		riddleList.add("There are two monkeys on a tree and one jumps off. Why does the other monkey jump too?");
 		riddleList.add("There are 30 cows in a field, and 28 chickens. How many didn't?");
@@ -146,7 +152,6 @@ private String groanJoke(String text)
 		riddleList.add("What do you call a man with a rubber toe?");
 		riddleList.add("What does a house wear?");
 
-		
 		answerList.add("SEE O DOUBLE YOU.");
 		answerList.add("Monkey see monkey do.");
 		answerList.add(
@@ -156,11 +161,9 @@ private String groanJoke(String text)
 		answerList.add("A tuna (two-knee) fish!");
 		answerList.add("Roberto.");
 		answerList.add("Address! (A dress)");
-		
-		
+
 		return "";
 	}
-
 
 	private String spookyResponse()
 	{
@@ -192,14 +195,14 @@ private String groanJoke(String text)
 			return response5;
 		}
 	}
-	
-	private void workWithIntArray(int [] numbers)
+
+	private void workWithIntArray(int[] numbers)
 	{
 		int favoriteNumber = 13;
-		numbers [0] = favoriteNumber;
-		numbers [numbers.length - 1] = favoriteNumber;
-		
-		for (int index = 0; index < numbers.length; index ++)
+		numbers[0] = favoriteNumber;
+		numbers[numbers.length - 1] = favoriteNumber;
+
+		for (int index = 0; index < numbers.length; index++)
 		{
 			System.out.println("Index" + index + ": contains: " + numbers[index]);
 		}
@@ -262,7 +265,7 @@ private String groanJoke(String text)
 
 				if (closeTagStartIndex > openTagEndIndex && closeTagEndIndex > closeTagStartIndex)
 				{
-					String closingKeyword = phrase.substring(closeTagStartIndex + 2,openTagEndIndex);
+					String closingKeyword = phrase.substring(closeTagStartIndex + 2, openTagEndIndex);
 					int closetagStart = phrase.indexOf("<" + closingKeyword + ">", openTagEndIndex);
 					int spaceIndex = keyword.indexOf(" ");
 					if (spaceIndex != -1)
