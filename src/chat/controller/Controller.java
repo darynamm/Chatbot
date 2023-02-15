@@ -51,6 +51,7 @@ String text = view.askQuestion("Lets talk to the chatbot!");
 	public String interactWithChatbot(String text, int index)
 	{
 		String response = "";
+		response = chatbot.processText(text,  index);
 		return response;
 	}
 }

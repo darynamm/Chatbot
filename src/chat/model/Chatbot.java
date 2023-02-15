@@ -46,10 +46,8 @@ public class Chatbot
 	{
 		String output = "";
 
-		// int randomMethod = (int) (Math.random() * 6);
-choice = 2;
-choice = 5;
-choice = 8;
+		 int randomMethod = (int) (Math.random() * 6);
+
 		if (choice == 0)
 		{
 			output = reversePronounDirection(input);
@@ -93,7 +91,55 @@ choice = 8;
 
 		return output;
 	}
+	public String processText(String input)
+	{
+		String output = "";
 
+		 int randomMethod = (int) (Math.random() * 6);
+
+		if (randomMethod == 0)
+		{
+			output = reversePronounDirection(input);
+		}
+		else if (randomMethod == 1)
+		{
+			if (spookyChecker(input))
+			{
+				output += "\n" + spookyResponse() + "\n";
+			}
+			else
+			{
+				output += "\n" + "That isnt very spooky";
+			}
+		}
+		else if (randomMethod == 2)
+		{
+			if (isValidHTMLChecker(input))
+			{
+				output += "\n" + isValidHTMLResponse() + "\n";
+			}
+			else
+			{
+				output += "\n" + "No HTML here :(" + "\n";
+			}
+		}
+		else if (randomMethod == 3)
+		{
+			output = answerRiddle(input);
+		}
+		else if (randomMethod == 4)
+		{
+			// joke list or other
+		}
+		else
+		{
+			// joke list or oher
+		}
+		int randomTopic = (int) (Math.random() * chatTopics.length);
+		output += "\n" + chatTopics[randomTopic];
+
+		return output;
+	}
 	private boolean spookyChecker(String text)
 	{
 
@@ -281,7 +327,7 @@ choice = 8;
 		}
 		return isValid;
 	}
-
+	
 	private String isValidHTMLResponse()
 	{
 		int openTagOpenBracketIndex = 0;
