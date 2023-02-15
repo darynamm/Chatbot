@@ -110,7 +110,37 @@ public class ChatPanel extends JPanel
 	}
 	private void setupListeners()
 	{
+		reversePronounButton.addActionListener(click -> updateDisplay(chatField.getText(), 0));
+		htmlButton.addActionListener(click -> updateDisplay(chatField.getText(), 1));
 		
+		holidayButton.addActionListener(click -> updateDisplay(chatField.getText(), 2));
+		arrayButton.addActionListener(click -> updateDisplay(chatField.getText(), 3));
+		
+		spookyButton.addActionListener(click -> updateDisplay(chatField.getText(), 4));
+		riddleButton.addActionListener(click -> updateDisplay(chatField.getText(), 5));
+		
+		
+		groanButton.addActionListener(click -> updateDisplay(chatField.getText(), 4));
+		processTextButton.addActionListener(click -> updateDisplay(chatField.getText(), 5));
+		
+		loadButton.addActionListener(click -> updateDisplay(chatField.getText(), 6));
+		saveButton.addActionListener(click -> updateDisplay(chatField.getText(), 7));
+		
+		
+		chatButton.addActionListener(click -> updateDisplay(chatField.getText(), -9));
+		chatField.addActionListener(enterPress -> updateDisplay(chatField.getText(), -9));
+		
+		
+		
+	}
+	private void updateDisplay(String text, int choice)
+	{
+		String response = app.interactWithChatbot(text,  choice);
+		
+		chatArea.append(text + "\n");
+		chatArea.append(response + "\n");
+		chatArea.setCaretPosition(chatArea.getDocument().getLength());
+		chatField.setText("");
 	}
 	private void setupLayout()
 	{
